@@ -1,7 +1,12 @@
+import React, { useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { people } from './peopleConstants';
+import EditablePersonGrid from './EditableGrid';
+
 
 function App() {
+  const gridRef = useRef(null);
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +23,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <EditablePersonGrid ref={gridRef} people={people} />
     </div>
   );
 }
